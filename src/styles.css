@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~font-awesome/css/font-awesome.min.css';
+
+
+ul li{
+    list-style-type: none;
+}
+.btn{
+    background-color:orange;
+    color:white;
+}
+.btn:hover{
+background-color: white;
+color:orange;
+border-color: orange;
+}

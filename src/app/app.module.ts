@@ -3,16 +3,46 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GoalComponent } from './goal/goal.component';
+import { GoalDetailComponent } from './goal-detail/goal-detail.component';
+import { FormsModule } from '@angular/forms';
+import { SampleDetailsComponent } from './sample-details/sample-details.component';
+import { FormComponent } from './form/form.component';
+import { DurationCountPipe } from './duration-count.pipe';
+import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { GoalServiceService } from './goal-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GoalComponent,
+    GoalDetailComponent,
+    SampleDetailsComponent,
+    FormComponent,
+    DurationCountPipe,
+    AboutComponent,
+    NavbarComponent,
+    NotFoundComponent,
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule ,
+    NgProgressModule.forRoot(),
+    NgProgressHttpClientModule,
+    // BrowserAnimationsModule
+    
   ],
-  providers: [],
+  providers: [GoalServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

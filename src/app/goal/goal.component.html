@@ -1,0 +1,48 @@
+
+<body>
+  
+
+
+    <h1>My Goals</h1>
+<hr>
+
+<div class="row">
+  <div class="col-md-3">
+
+  
+
+
+<ul  >
+  <div *ngFor='let goal of goals;let i = index'>
+    <li>{{goal.name}}</li>
+    <button class="btn btn-outline" (click)='toggleDetails(i)'>Toggle Details</button>
+    <!-- <button class="btn btn-primary" (click)='goToUrl(goal.id)'>View Details</button> -->
+    <app-goal-detail *ngIf='goal.showDescription' [goal]='goal'></app-goal-detail>
+  </div>
+</ul>
+<p *ngIf='goals.length == 0'>You have too many goals</p>
+</div>
+</div>
+
+
+<app-form></app-form>
+
+
+<div class="container">
+  <ng-progress></ng-progress>
+  <h1>MY GOALS</h1>
+
+
+  <p *ngIf='goals.length > 5'>You have too many goals</p>
+  <div class="row">
+    <blockquote class="blockquote text-center">
+      <!-- <p class="mb-0">{{quote.quote}}</p> -->
+      <!-- <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer> -->
+    </blockquote>
+  </div>
+</div>
+
+<button *ngIf = "isLoading" (click) = demo()> load<i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i></button>
+
+<p class="animate__animated animate__bounce animate__slower animate__infinite	infinite animate__delay-2s	5s	infinite text-center"><i class="fa fa-book" aria-hidden="true"></i></p>
+</body>
